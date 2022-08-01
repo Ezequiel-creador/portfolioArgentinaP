@@ -1,0 +1,25 @@
+{   
+    
+    "nav":{ 
+      "image": "assets/img/logo.jpg",
+      "textname": "Argentina Programa"},
+
+    "@menu": "Menu",
+    "menuItem":[{
+        
+                  "opcion": "Inicio"},
+                  {"opcion":"Acerca"},
+                  {"opcion": "Habilidades"},
+                  {"opcion": "Servicios"},
+                  {"opcion": "Educación"},
+                  {"opcion": "Mis trabajos"},
+                  {"opcion": "Login"
+                }],
+                
+    "sectiohero": {
+      
+        
+              "@style": "background-image:url('assets/img/dice.jpg');",
+               "p": "BIENVENIDOS"
+            }
+        }

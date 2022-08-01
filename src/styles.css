@@ -1,1 +1,354 @@
-/* You can add global styles to this file, and also import other style files */
+
+html {
+    box-sizing: border-box;}
+    
+    *::after,
+    *::before {
+      box-sizing: inherit;}
+      
+      
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        font-family:Rubik,sans-serif!important;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      section {
+        padding: 1rem;
+      }
+      article{position:relative;}
+
+      
+      
+      
+/***formulario de contacto*******/
+      
+      .contact-form {
+        margin: 2rem auto;
+        padding: 1rem;
+        max-width: 800px;
+      }
+      
+      .contact-form > * {
+        padding: 0.5rem;
+        margin: 1rem auto;
+        display: block;
+        width: 100%;
+      }
+      
+      
+    
+      
+      .contact-form input {
+        border: 0;
+        padding-left: 0;
+        border-bottom: thin solid #666;
+      }
+      
+      .contact-form textarea {
+        border: thin solid #666;
+        resize: none;
+      }
+      
+      .contact-form input[type="submit"] {
+        margin-top: 0;
+        cursor: pointer;
+        transition: all 0.5s ease-out;
+      }
+      
+      .contact-form input[type="submit"]:hover {
+        opacity: 0.75;
+      }
+      
+      .contact-form ::placeholder {
+        color: #666;
+      }
+      
+      .contact-form-response {
+        padding: 1rem;
+        width: 400px;
+        text-align: center;
+        background-color: #fff;
+      }
+
+     #bg-contactos{
+     position:relative;
+     top: -130px;
+} 
+
+ #seccion-contacto{
+    background-color: #1b2a4e;
+    min-height:500px;
+    position:relative;
+}
+      #contenedor-formulario{
+        position:absolute;
+        top:30%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        background: #fbfafa;
+        border-radius:5px;
+        
+    }
+    
+    #titulo-formulario {
+        color: #3f3f3f;
+    }
+    /* ********** HeroImage ********** */
+    .hero-image>img {
+      
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    
+    .hero-image-opacity {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);;
+    }           
+    /*******animacion texto******/
+    .css-typing p {
+        color:white;
+        font-size:60px;
+        border-right: .15em solid white;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      
+      .css-typing p:nth-child(1) {
+        width: 37em;
+        -webkit-animation: type 5s steps(40, end), blink .5s step-end infinite alternate;
+        animation: type 5s steps(40, end), blink .5s step-end infinite alternate;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+      
+      
+      @keyframes type {
+      0% {
+        width: 0;
+      }
+      1% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+      }
+      
+      @-webkit-keyframes type {
+      0% {
+        width: 0;
+      }
+      1% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+      }
+      
+      @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+      }
+      @-webkit-keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+      }
+
+/**********cartas contacto*************/   
+.contact-card {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 100%;
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .contact-card > svg {
+    width: 2rem;
+    height: 2rem;
+    fill:#1b2a4e
+
+  }
+  
+  .contact-card > small {
+    margin-top: -1rem;
+  }
+  
+  
+  .social-media a {
+    padding: 0 0.4rem;
+    text-decoration: none;
+  }
+  
+  .social-media svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color:#1b2a4e;
+  }
+  .contact-card> small{
+    margin-top: -1rem;
+  }
+
+
+  
+  
+  /*********resolucion pantalla**********/
+  @media screen and (min-width: 768px) {
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 48%);
+      justify-content: space-between;
+    }
+  
+    
+  
+   .section-title {
+      grid-column: span 2;
+    }
+  
+    .portfolio>.container{
+      justify-content: space-between;
+    }
+   
+   
+   
+  
+    
+  }
+  @media screen and (min-width: 1024px) {
+    
+    .full-lg-screen {
+      width: 100%;
+      min-height: 100vh;
+    }
+    .about {
+      font-size:25px;
+      display: grid;
+      grid-template-columns: repeat(2, 40%);
+      justify-content:space-between;
+      align-content: center;
+    }
+    .portfolio > .container {
+      display: grid;
+      grid-template-columns: repeat(2, 40%);
+      justify-content: space-between;
+    }
+    .contact-cards {
+      grid-template-columns: repeat(4, 25%);
+    }
+  
+    .footer {
+      margin-bottom: 0;
+    }
+  
+    #mimagen{
+      padding: 0rem 5rem 5rem 5rem;
+    
+    }
+   
+  
+    .portfolio .section-title {
+      grid-column: span 2;
+    }
+   
+  .educ>.container{
+    grid-template-columns: repeat(2, 50%);
+  }
+    
+  
+    .services .section-title {
+      grid-column: span 2;
+    }}
+    /****especiales***/
+    .bg-gray-light {
+        background-color: #f3f3f3;
+      }
+      
+      .box-shadow-1 {
+        box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+      }
+      
+      .btn {
+        border-radius: 0.5rem;
+        padding: 1rem;
+        display: inline-block;
+        width: 200px;
+        
+      }
+      #botonPequeño{
+        width:40px;
+        height:40px;}
+      #botonPequeño1{
+        width:40px;
+        height:40px;
+        position:absolute;
+        bottom:0px;
+        right:0px;
+        
+        
+    }
+        
+      
+      .nav-item{
+        justify-content: space-between;
+        font-size: 0.8rem;
+      }
+      
+      
+      .gray-scale {
+        filter: grayscale(1);
+      }
+      .none {
+        display: none;
+      }
+      
+    
+      
+      .section-title {
+        border-top: thin solid rgba(64, 119, 238, 0.8);
+        border-bottom: thin solid rgba(64, 119, 238, 0.8);
+        margin:auto;
+        padding:0.5rem;
+        width: 250px;
+        text-align:center;
+        color: #060e20;
+      }
+      
+      
+      
+      .text-center {
+        text-align: center;
+      }
+      
+      
+     
+      
+/*******pie de pagina**************/
+
+footer {
+  background: #1b2a4e;
+  min-height: 100px;;
+}
+footer p{
+  color:#f3f3f3;
+  text-align:center;
+}
+

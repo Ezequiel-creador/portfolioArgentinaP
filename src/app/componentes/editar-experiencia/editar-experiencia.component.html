@@ -1,0 +1,28 @@
+
+<div class="container" *ngIf="exper">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="edicion()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="puesto">Nombre de la empresa</label>
+                    <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="exper.puesto" required>
+                </div>
+                <div class="form-group">
+                    <label for="empresa">Nombre de la empresa</label>
+                    <input type="text" class="form-control" id="empresa" name="empresa" [(ngModel)]="exper.empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion de las tareas</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="exper.descripcion" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="number" class="form-control" id="fecha" name="fecha" [(ngModel)]="exper.fecha" required>
+                </div>
+                <button class="btn btn-primary">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

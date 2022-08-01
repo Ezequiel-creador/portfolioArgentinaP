@@ -1,0 +1,79 @@
+<section id="acerca" class=" about bg-gray-light justify-content-center full-lg-screen" >
+  
+    <article class=" text-center lg-center">
+       
+        <aside >
+         
+           <h1 class="text-dark pt-3 fs-1 p-3" >{{acerca.nombreCompleto}}</h1>
+         <h4><i class="text-dark fs-4">{{acerca.encabezado}}</i></h4>
+        <p>{{acerca.infoPersona}}</p>
+        
+        
+          </aside>
+        
+        
+      </article>
+      
+      <article id="image">
+       
+          
+          
+          <img id="mimagen" class="gray-scale img-fluid " [src]="'../assets/imgeze.jpg'">
+          
+      
+          <div class="btn-group-sm me-2" role="group" aria-label="First group">
+           
+          
+          
+            <button type="button" class="btn btn-success" id="botonPequeño1"data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" (click)="editar(acerca)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+            </svg></button>
+
+            
+            
+            
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Crear acerca</h5>
+                  
+                </div>
+                <div class="modal-body">
+                  
+                  
+                  
+                  <form [formGroup]="acercaForm"  (ngSubmit)="guardar()">
+                  <div class="form-group mb-3">
+                    <label for="recipient-name" class="col-form-label">Nombre Completo:</label>
+                    <input class="form-control" id="recipient-name" formControlName="nombreCompleto" >
+                  </div> 
+                  <div class="form-group mb-3">
+                    <label for="recipient-name" class="col-form-label">Encabezado:</label>
+                    <input class="form-control" id="recipient-name" formControlName="encabezado" >
+                  </div> 
+                  <div class="form-group mb-3">
+                      <label for="message-text" class="col-form-label">Comentario:</label>
+                      <textarea type="text"  formControlName="infoPersona" class="form-control" id="message-text"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="recipient-name" class="col-form-label">URL Imagen:</label>
+                      <input class="form-control" id="recipient-name" formControlName="url" >
+                    </div>
+             
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="submit" class="btn btn-primary" [disabled]="acercaForm.invalid">Guardar</button>
+                </div>
+              </form>
+              </div>
+            </div>
+            </div>
+          </div>
+        
+         </div>
+        </article>
+      
+    </section> 
+    
