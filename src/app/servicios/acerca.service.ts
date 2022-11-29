@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AcercaService {
-  API_SERVER:string = "http://localhost:8080/";
+  API_SERVER:string = "https://portfoliobackarpro.herokuapp.com/";
   constructor(private httpClient: HttpClient) { }
 
 public buscarAcerca(): Observable<any>{

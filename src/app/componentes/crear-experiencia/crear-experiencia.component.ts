@@ -31,6 +31,7 @@ export class CrearExperienciaComponent implements OnInit {
         this.router.navigate(['']);
       }
     )
+    
   }
 
 }

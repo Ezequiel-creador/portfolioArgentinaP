@@ -1,7 +1,7 @@
 ul
-{display: flex; /* Hacemos flex al ul */
-justify-content: center; /* centramos en el eje horizontal*/
-justify-content: space-evenly; /* Aplicamos separación a los elementos dentro del ul */
+{display: flex; 
+justify-content: center; 
+justify-content: space-evenly; 
 margin: 0;
 padding: 0;
 }

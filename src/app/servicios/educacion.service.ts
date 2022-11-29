@@ -8,7 +8,7 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
   
-  URL:string = "http://localhost:8080/";
+  URL:string = "https://portfoliobackarpro.herokuapp.com/";
   constructor(private httpClient : HttpClient) { }
 
   public lista(): Observable<Educacion[]>{
@@ -16,14 +16,14 @@ export class EducacionService {
   }
 
   public detail(id: number): Observable<Educacion>{
-    return this.httpClient.get<Educacion>(this.URL + `buscar/educacion/${id}`);
+    return this.httpClient.get<Educacion>(this.URL +`buscar/educacion/perfil/${id}`);
   }
 
   public save(educacion: Educacion): Observable<any>{
     return this.httpClient.post<any>(this.URL + 'new/educacion', educacion);
   }
 
-  public update(id: number, educacion: Educacion): Observable<any>{
+  public update(id:number ,educacion: Educacion): Observable<any>{
     return this.httpClient.put<any>(this.URL + `new/educacion/${id}`, educacion);
   }
 

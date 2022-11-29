@@ -16,7 +16,7 @@ export class EducacionComponent implements OnInit {
   
 
   ngOnInit(): void {
-   /* this.cargarEducacion();
+   this.cargarEducacion();{}/*
     if(this.tokenService.getToken()){
       this.isLogged = true;
     } else {
@@ -33,7 +33,7 @@ export class EducacionComponent implements OnInit {
     )
   }
 
-  /*delete(id?: number){
+  delete(id?: number){
     if( id != undefined){
       this.educacionS.delete(id).subscribe(
         data => {
@@ -43,5 +43,5 @@ export class EducacionComponent implements OnInit {
         }
       )
     }
-  }*/
+  }
 }
