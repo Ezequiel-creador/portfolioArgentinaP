@@ -22,7 +22,14 @@ html {
       }
       article{position:relative;}
 
-      
+/*********** nav-bar  *************/
+
+  
+   @media screen and (max-width: 338px) {
+   .titulo{
+    display:none;
+    }
+    }
       
       
 /***formulario de contacto*******/
@@ -124,6 +131,10 @@ html {
         white-space: nowrap;
         overflow: hidden;
       }
+      @media screen and (max-width: 768px) {
+        .css-typing p{
+        font-size:30px;}
+      }
       
       .css-typing p:nth-child(1) {
         width: 37em;
@@ -168,6 +179,40 @@ html {
         border-color: transparent;
       }
       }
+   /* ********** Barra de Progreso ********** */
+
+progress {
+  width: 100%;
+  height: 7rem;
+  background-color: #ccc;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #ccc ;
+}
+
+progress::-webkit-progress-value {
+  background-color: #666;
+}
+
+progress::-moz-progress-bar {
+  background-color: #666;
+}
+
+.progress {
+  height:2rem ;
+  margin: 3rem auto;
+  
+
+}
+
+.progress > p{
+  display: flex;
+  justify-content: center;
+  font-size: 0.7rem;
+  width: 10rem;
+  padding:3px;
+}   
 
 /**********cartas contacto*************/   
 .contact-card {
@@ -258,7 +303,7 @@ html {
     .footer {
       margin-bottom: 0;
     }
-  
+   
     #mimagen{
       padding: 0rem 5rem 5rem 5rem;
     

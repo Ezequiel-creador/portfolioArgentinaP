@@ -8,7 +8,7 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
   
-  URL:string = "https://portfoliobackarpro.herokuapp.com/";
+  URL:string = "https://back-argprograma.onrender.com";
   constructor(private httpClient : HttpClient) { }
 
   public lista(): Observable<Educacion[]>{

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NumberValueAccessor, Validators } from '@angular/forms';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
+import { Habilidades } from 'src/app/model/habilidades';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-habilidades',
@@ -9,46 +11,39 @@ import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 })
 export class HabilidadesComponent implements OnInit {
 
-  habilidad:any;
-  habilidadForm:FormGroup=this.fb.group({
-    id: [''],
-    porcentajepr: ['', Validators.required],
-    porcentajesg: ['', Validators.required],
-    porcentajetr: ['', Validators.required],
-    porcentaject: ['', Validators.required],
-    porcentajeqt: ['', Validators.required],
-  });
-  
+  habilidades!:Habilidades;
   constructor(
     public habilidadesService: HabilidadesService,
-    public fb:FormBuilder) { }
-
-  ngOnInit(): void { 
-   
-    this.habilidadesService.buscarHabilidades().subscribe(data=> {
-    this.habilidad=data;
+    public fb:FormBuilder,
+    private activatedRouter: ActivatedRoute,
+    private router: Router) 
+    { }
+  /*selectHabilidad:Habilidades=new Habilidades();*/
+  ngOnInit():void { 
+  this.cargar();{}
+ /* addOrEdit(){
+    this.selectHabilidad.id=this.habilidades.length+1;
+    this.habilidades.push(this.selectHabilidad);
+    this.selectHabilidad=new Habilidades();
+  }*/}
+  cargar():void{this.habilidadesService.buscarHabilidades().subscribe(data=> {
+    this.habilidades=data;
     console.log(data);
      });
   }
-  
-  guardar():void{ this.habilidadesService.guardarHabilidades(this.habilidadForm.value).subscribe(resp => {
-   this.habilidadForm.reset();
-   this.habilidad.push(resp);
-   
-  },
-    error => { console.error(error) }
-  )
-  }
-  cambiar(habilidad:any){ this.habilidadForm.setValue({
-    id:habilidad.id,
-    porcentajepr: habilidad.porcentajepr ,
-    porcentajesg: habilidad.porcentajesg ,
-    porcentajetr: habilidad.porcentajetr ,
-    porcentaject: habilidad.porcentaject ,
-    porcentajeqt: habilidad.porcentajeqt ,
-   
 
-  })
+onUpdate():void{
+ 
+  this.habilidadesService.guardarHabilidades(this.habilidades).subscribe(
+    data=> {
+      this.habilidades=data;
   
+    }, err => {
+      alert("Error al modificar habilidades");
+      this.router.navigate(['']);
+    }
+  )
 }
+
 }
+ 

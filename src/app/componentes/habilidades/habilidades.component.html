@@ -1,43 +1,81 @@
 
-<section id="skills" class=" full-lg-screen">
+<section id="skills" class=" full-lg-screen"  >
 
   
   
     <h2 class="section-title mb-4">Mis Habilidades</h2>
+    <div class="progress">
+      <p>
+        <b>Desarrollo Web Frontend</b>
+        <b>{{habilidades.porcentajepr}}</b>
+      </p>
+      <progress [value]="(habilidades.porcentajepr)" min="0" max="100"></progress>
+    </div>
+    <div class="progress">
+      <p>
+        <b>Diseño</b>
+        <b>{{habilidades.porcentajesg}}%</b>
+      </p>
+      <progress [value]="(habilidades.porcentajesg)" min="0" max="100"></progress>
+    </div>
+    <div class="progress">
+      <p>
+        <b>Desarrollo Web Backend</b>
+        <b>{{habilidades.porcentajetr}}%</b>
+      </p>
+      <progress [value]="(habilidades.porcentajetr)" min="0" max="100"></progress>
+    </div>
+    <div class="progress">
+      <p>
+        <b>Frameworks</b>
+        <b>{{habilidades.porcentaject}}%</b>
+      </p>
+      <progress [value]="(habilidades.porcentaject)" min="0" max="100"></progress>
+    </div>
+    <div class="progress">
+      <p>
+        <b>Base de datos</b>
+        <b>{{habilidades.porcentajeqt}}%</b>
+      </p>
+      <progress [value]="(habilidades.porcentajeqt)" min="0" max="100"></progress>
+    </div>
+    <!--<p><span class="text-dark f-5 fw-bold"><b>DESARROLLO FRONTEND</b><b class="position-absolute end-0 mx-5" ></b></span></p>
     
-    <p><span class="text-dark f-5 fw-bold"><b>DESARROLLO FRONTEND</b><b class="position-absolute end-0 mx-5" >{{habilidad.porcentajepr}}</b></span></p>
     <div class="progress">
-      <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar" style="width:10%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      
+      <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar" Style="width: 50%" [aria-valuenow]="(habilidades.porcentajepr)" aria-valuemin="0" aria-valuemax="100">{{habilidades.porcentajepr}}</div>
     </div>
-    <p><span class="text-dark f-5 fw-bold"><b>DISEÑO</b><b class="position-absolute end-0 mx-5" >{{habilidad.porcentajesg}}</b></span></p>
+    <p><span class="text-dark f-5 fw-bold"><b>DISEÑO</b><b class="position-absolute end-0 mx-5" ></b></span></p>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow=habilidades.porcentajesg aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <p><span class="text-dark f-5 fw-bold"><b>DESARROLLO BACKEND</b><b class="position-absolute end-0 mx-5" ></b></span></p>
     <div class="progress">
       <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <p><span class="text-dark f-5 fw-bold"><b>DESARROLLO BACKEND</b><b class="position-absolute end-0 mx-5" >{{habilidad.porcentajetr}}</b></span></p>
+    <p><span class="text-dark f-5 fw-bold"><b>FRAMEWORKS</b><b class="position-absolute end-0 mx-5" ></b></span></p>
     <div class="progress">
-      <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar" style="width: 45%" aria-valuenow="habilidades.porcentaject" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <p><span class="text-dark f-5 fw-bold"><b>FRAMEWORKS</b><b class="position-absolute end-0 mx-5" >{{habilidad.porcentaject}}</b></span></p>
+    <p><span class="text-dark f-5 fw-bold"><b>BASE DE DATOS</b><b class="position-absolute end-0 mx-5"></b></span></p>
     <div class="progress">
-      <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-    <p><span class="text-dark f-5 fw-bold"><b>BASE DE DATOS</b><b class="position-absolute end-0 mx-5">{{habilidad.porcentajeqt}}</b></span></p>
-    <div class="progress">
-      <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar" style="width: 30%" aria-valuenow="habilidades.porcentajeqt" aria-valuemin="0" aria-valuemax="100"></div>
     
       </div>
-        
+        ---->
       
       <br><div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <div class="btn-group-sm me-2" role="group" aria-label="First group">
-      <button type="button" class="btn btn-success" id="botonPequeño"data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@getbootstrap" ng-click="cambiar(habilidad)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+        <div class="btn-group-sm me-2" role="group" aria-label="First group" >
+         <button type="button" class="btn btn-success" id="botonPequeño"data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@getbootstrap" ng-click="cambiar(habilidad)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-          </svg></button>
+          </svg>
+        </button>
           </div>
           </div>
           
           
-          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -48,33 +86,33 @@
                   
                   
                   
-                  <form [formGroup]="habilidadForm"  (ngSubmit)="guardar()">
+                  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                   <div class="form-group mb-3">
                     
                   
                   <label for="customRange2" class="form-label"> DESARROLLO FRONTEND:</label>
-                 <input type="range" class="form-range" min="0" max="100" id="porcentajepr">
+                 <input type="range" class="form-range" min="0" max="100" id="porcentajepr" name="porcentajepr" [(ngModel)]="habilidades.porcentajepr" required>
                  </div>
                   <div class="form-group mb-3">
                     <label for="customRange2" class="form-label"> DISEÑO:</label>
-                    <input type="range" class="form-range" min="0" max="100" id="porcentajesg">
+                    <input type="range" class="form-range" min="0" max="100" id="porcentajesg" name="porcentajesg" [(ngModel)]="habilidades.porcentajesg" required>
                   </div> 
                   <div class="form-group mb-3">
                     <label for="customRange2" class="form-label"> DESARROLLO BACKEND:</label>
-                    <input type="range" class="form-range" min="0" max="100" id="porcentajetr">
+                    <input type="range" class="form-range" min="0" max="100" id="porcentajetr" name="porcentajetr" [(ngModel)]="habilidades.porcentajetr" required>
                     </div>
                     <div class="form-group mb-3">
                       <label for="customRange2" class="form-label"> FRAMEWORKS:</label>
-                      <input type="range" class="form-range" min="0" max="100" id="porcentaject">
+                      <input type="range" class="form-range" min="0" max="100" id="porcentaject" name="porcentaject" [(ngModel)]="habilidades.porcentaject" required>
                     </div>
                     <div class="form-group mb-3">
                       <label for="customRange2" class="form-label"> BASE DE DATOS:</label>
-                      <input type="range" class="form-range" min="0" max="100" id="porcentajeqt">
+                      <input type="range" class="form-range" min="0" max="100" id="porcentajeqt" name="porcentajeqt" [(ngModel)]="habilidades.porcentajeqt" required>
                     </div>
              
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn btn-primary" [disabled]="habilidadForm.invalid">Guardar</button>
+                  <button type="submit" class="btn btn-primary" >Guardar</button>
                 </div>
               </form>
               </div>

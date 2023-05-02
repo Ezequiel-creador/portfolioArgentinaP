@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HabilidadesService {
-  API_SERVER:string = "https://portfoliobackarpro.herokuapp.com/";
+  API_SERVER:string = "https://back-argprograma.onrender.com";
  
   constructor(private httpClient: HttpClient) { }
   
