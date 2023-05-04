@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, NumberValueAccessor, Validators } 
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 import { Habilidades } from 'src/app/model/habilidades';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-habilidades',
@@ -15,23 +16,27 @@ export class HabilidadesComponent implements OnInit {
   constructor(
     public habilidadesService: HabilidadesService,
     public fb:FormBuilder,
-    private activatedRouter: ActivatedRoute,
-    private router: Router) 
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private tokenService: TokenService
+    ) 
     { }
-  /*selectHabilidad:Habilidades=new Habilidades();*/
-  ngOnInit():void { 
-  this.cargar();{}
- /* addOrEdit(){
-    this.selectHabilidad.id=this.habilidades.length+1;
-    this.habilidades.push(this.selectHabilidad);
-    this.selectHabilidad=new Habilidades();
-  }*/}
-  cargar():void{this.habilidadesService.buscarHabilidades().subscribe(data=> {
-    this.habilidades=data;
-    console.log(data);
-     });
-  }
+  isLogged=false;
 
+  ngOnInit():void { 
+  this.cargar();
+  if(this.tokenService.getToken()){
+    this.isLogged = true;
+  } else {
+    this.isLogged = false;
+  }}
+  cargar(): void{
+    this.habilidadesService.buscarHabilidades().subscribe(
+      data => {
+        this.habilidades = data;
+      }
+    )
+    }
 onUpdate():void{
  
   this.habilidadesService.guardarHabilidades(this.habilidades).subscribe(
@@ -44,6 +49,17 @@ onUpdate():void{
     }
   )
 }
-
+onCreate(): void{
+  const habilidades = new Habilidades(this.habilidades.porcentajepr, this.habilidades.porcentajesg,this.habilidades.porcentajetr,this.habilidades.porcentaject,this.habilidades.porcentajeqt);
+  this.habilidadesService.guardarHabilidades(habilidades).subscribe(
+    data => {
+      alert("Skill creada correctamente");
+      this.router.navigate(['']);
+    }, err =>{
+      alert("Fallo al añadir la skill");
+      this.router.navigate(['']);
+    }
+  )
+}
 }
  

@@ -9,7 +9,7 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-authURL = 'https://portfoliobackarpro.herokuapp.com/';
+authURL = 'https://back-argprograma.onrender.com/';
   constructor(private httpClient: HttpClient) { }
   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>{
     return this.httpClient.post<any>(this.authURL + "nuevoUsuario",nuevoUsuario)

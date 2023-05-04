@@ -1,5 +1,8 @@
-<div class="container">
-    <div class="row">
+<section  class=" bg-gray-light justify-content-center full-lg-screen" >
+    <div class="container" >
+<div class="card" Style="padding:3rem;">
+    <h2>Crear educación</h2>
+<div class="row d-flex">
         <div>
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="form-group">
@@ -10,11 +13,12 @@
                     <label for="titulo">Título obtenido:</label>
                     <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
                 </div>
-                <button class="btn btn-primary">
-                    Agregar educacion
+                <button class="btn btn-primary m-4">
+                    Añadir
                 </button>
             </form>
         </div>
     </div>
 </div>
-
+</div>
+</section>

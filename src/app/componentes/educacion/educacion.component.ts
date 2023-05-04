@@ -12,16 +12,16 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class EducacionComponent implements OnInit {
   educacion: Educacion[] = [];
 
-  constructor(private educacionS: EducacionService) { }
-  
+  constructor(private educacionS: EducacionService, private tokenService: TokenService) { }
+  isLogged= false;
 
   ngOnInit(): void {
-   this.cargarEducacion();{}/*
+   this.cargarEducacion();
     if(this.tokenService.getToken()){
       this.isLogged = true;
     } else {
       this.isLogged = false;
-    }*/
+    }
   }
 
   cargarEducacion(): void{

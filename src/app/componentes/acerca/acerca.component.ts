@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AcercaService } from 'src/app/servicios/acerca.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { ImagenService } from 'src/app/servicios/imagen.service';
 
 @Component({
   
@@ -22,7 +23,10 @@ export class AcercaComponent implements OnInit {
   
   constructor(
     public acercaService: AcercaService,
-    public fb:FormBuilder) { }
+    public fb:FormBuilder,
+    private router:Router,
+    public imagenService:ImagenService
+    ) { }
 
   ngOnInit(): void { 
     this.cargar();{}
@@ -52,7 +56,9 @@ export class AcercaComponent implements OnInit {
   })
   
 }
-
+ subirImg($event:any){
+  this.imagenService.subirImg($event)
+ }
 
 
 
